@@ -4,8 +4,8 @@
 
 <br>
 
-# ATmega128P Blink Driver
-An ATmega128P blink driver written entirely in Assembler.
+# ATmega328P Blink Driver
+An ATmega328P blink driver written entirely in Assembler.
 
 <br>
 
