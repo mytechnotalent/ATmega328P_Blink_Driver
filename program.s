@@ -1,5 +1,5 @@
 ; ===================================================================
-; Project: ATmega128P Blink Driver
+; Project: ATmega328P Blink Driver
 ; ===================================================================
 ; Author: Kevin Thomas
 ; E-Mail: ket189@pitt.edu
