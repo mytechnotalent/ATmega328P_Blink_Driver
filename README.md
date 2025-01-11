@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/mytechnotalent/ATmega128P_Blink_Driver/refs/heads/main/ATmega128P%20Blink%20Driver.png">
+<img src="https://raw.githubusercontent.com/mytechnotalent/ATmega128P_Blink_Driver/refs/heads/main/ATmega328P%20Blink%20Driver.png">
 
 ## FREE Reverse Engineering Self-Study Course [HERE](https://github.com/mytechnotalent/Reverse-Engineering-Tutorial)
 
@@ -12,7 +12,7 @@ An ATmega128P blink driver written entirely in Assembler.
 # Code
 ```assembler
 ; ===================================================================
-; Project: ATmega128P Blink Driver
+; Project: ATmega328P Blink Driver
 ; ===================================================================
 ; Author: Kevin Thomas
 ; E-Mail: ket189@pitt.edu
