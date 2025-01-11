@@ -137,4 +137,4 @@ delay_1s:
 <br>
 
 ## License
-[Apache-2.0 License](https://github.com/mytechnotalent/ATmega128P_Blink_Driver/blob/main/LICENSE)
+[Apache License 2.0](https://github.com/mytechnotalent/ATmega128P_Blink_Driver/blob/main/LICENSE)
