@@ -40,16 +40,16 @@
 ;               6.90 RJMP – Relative Jump
 ; ===================================================================
 program:
-  rcall  config_pins              ; config pins
+  RCALL  Config_Pins              ; config pins
 program_loop:
-  rcall  led_on                   ; turn LED on
-  rcall  delay_1s                 ; wait 1 second
-  rcall  led_off                  ; turn LED off
-  rcall  delay_1s                 ; wait 1 second
-  rjmp   program_loop             ; infinite loop
+  RCALL  Led_On                   ; turn LED on
+  RCALL  Delay_1s                 ; wait 1 second
+  RCALL  Led_Off                  ; turn LED off
+  RCALL  Delay_1s                 ; wait 1 second
+  RJMP   Program_Loop             ; infinite loop
 
 ; ===================================================================
-; SUBROUTINE: config_pins
+; SUBROUTINE: Config_Pins
 ; ===================================================================
 ; Description: Main configuration of pins on the ATmega128P Arduino 
 ;              Nano.
@@ -58,12 +58,12 @@ program_loop:
 ;               6.95 SBI – Set Bit in I/O Register
 ;               6.88 RET – Return from Subroutine
 ; ===================================================================
-config_pins:
-  sbi    DDRB, PB5                ; set PB5 as output
-  ret                             ; return from subroutine
+Config_Pins:
+  SBI    DDRB, PB5                ; set PB5 as output
+  RET                             ; return from subroutine
 
 ; ===================================================================
-; SUBROUTINE: led_on
+; SUBROUTINE: Led_On
 ; ===================================================================
 ; Description: Sets PB5 high to turn on the LED.
 ; -------------------------------------------------------------------
@@ -71,12 +71,12 @@ config_pins:
 ;               6.95 SBI – Set Bit in I/O Register
 ;               6.88 RET – Return from Subroutine
 ; ===================================================================
-led_on:
-  sbi    PORTB, PB5               ; set PB5 high
-  ret                             ; return from subroutine
+Led_On:
+  SBI    PORTB, PB5               ; set PB5 high
+  RET                             ; return from subroutine
 
 ; ===================================================================
-; SUBROUTINE: led_off
+; SUBROUTINE: Led_Off
 ; ===================================================================
 ; Description: Clears PB5 to turn off the LED.
 ; -------------------------------------------------------------------
@@ -84,12 +84,12 @@ led_on:
 ;               6.33 CBI – Clear Bit in I/O Register
 ;               6.88 RET – Return from Subroutine
 ; ===================================================================
-led_off:
-  cbi    PORTB, PB5               ; set PB5 low
-  ret                             ; return from subroutine
+Led_Off:
+  CBI    PORTB, PB5               ; set PB5 low
+  RET                             ; return from subroutine
 
 ; ===================================================================
-; SUBROUTINE: delay_1s
+; SUBROUTINE: Delay_1s
 ; ===================================================================
 ; Description: A one-second delay.
 ;              - CPU Clock: 16 MHz
@@ -104,18 +104,18 @@ led_off:
 ;               6.23 BRNE – Branch if Not Equal
 ;               6.88 RET – Return from Subroutine
 ; ===================================================================
-delay_1s:
-  ldi    r16, 250                 ; outer loop counter
-.outer_loop:
-  ldi    r17, 250                 ; middle loop counter
-.middle_loop:
-  ldi    r18, 64                  ; inner loop counter
-.inner_loop:
-  nop                             ; 1 cycle delay
-  dec    r18                      ; decrement inner loop counter
-  brne   .inner_loop              ; repeat if not zero else 2 cycles
-  dec    r17                      ; decrement middle loop counter
-  brne   .middle_loop             ; repeat if not zero
-  dec    r16                      ; decrement outer loop counter
-  brne   .outer_loop              ; repeat if not zero
-  ret                             ; return from subroutine
+Delay_1s:
+  LDI    R16, 250                 ; outer loop counter
+.Outer_Loop:
+  LDI    R17, 250                 ; middle loop counter
+.Middle_Loop:
+  LDI    R18, 64                  ; inner loop counter
+.Inner_Loop:
+  NOP                             ; 1 cycle delay
+  DEC    R18                      ; decrement inner loop counter
+  BRNE   .Inner_Loop              ; repeat if not zero else 2 cycles
+  DEC    R17                      ; decrement middle loop counter
+  BRNE   .Middle_Loop             ; repeat if not zero
+  DEC    R16                      ; decrement outer loop counter
+  BRNE   .Outer_Loop              ; repeat if not zero
+  RET                             ; return from subroutine
