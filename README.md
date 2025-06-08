@@ -59,7 +59,7 @@ program_loop:
   RCALL  Delay_1s                 ; wait 1 second
   RCALL  Led_Off                  ; turn LED off
   RCALL  Delay_1s                 ; wait 1 second
-  RJMP   Program_Loop             ; infinite loop
+  RJMP   program_loop             ; infinite loop
 
 ; ===================================================================
 ; SUBROUTINE: Config_Pins
