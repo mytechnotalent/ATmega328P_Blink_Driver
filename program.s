@@ -42,9 +42,9 @@
 program:
   RCALL  Config_Pins              ; config pins
 program_loop:
-  RCALL  Led_On                   ; turn LED on
+  RCALL  LED_On                   ; turn LED on
   RCALL  Delay_1s                 ; wait 1 second
-  RCALL  Led_Off                  ; turn LED off
+  RCALL  LED_Off                  ; turn LED off
   RCALL  Delay_1s                 ; wait 1 second
   RJMP   program_loop             ; infinite loop
 
@@ -63,7 +63,7 @@ Config_Pins:
   RET                             ; return from subroutine
 
 ; ===================================================================
-; SUBROUTINE: Led_On
+; SUBROUTINE: LED_On
 ; ===================================================================
 ; Description: Sets PB5 high to turn on the LED.
 ; -------------------------------------------------------------------
@@ -76,7 +76,7 @@ Led_On:
   RET                             ; return from subroutine
 
 ; ===================================================================
-; SUBROUTINE: Led_Off
+; SUBROUTINE: LED_Off
 ; ===================================================================
 ; Description: Clears PB5 to turn off the LED.
 ; -------------------------------------------------------------------
